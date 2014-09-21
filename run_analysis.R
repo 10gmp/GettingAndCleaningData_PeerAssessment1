@@ -21,7 +21,6 @@ data <- cbind(rbind(subject_train, subject_test), data)
 tidy <- data.frame()
 for(subject_data in split(data, data$Subject)){
   subject <- subject_data$Subject[1]
-  message(subject)
   for(activity_data in split(subject_data, subject_data["Activity Name"])){
     if(nrow(activity_data) > 0){
       activity <- activity_data["Activity Name"][[1]][1]
